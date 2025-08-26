@@ -1,0 +1,4 @@
+Flask
+elasticsearch
+redis
+python-dotenv
