@@ -1,7 +1,8 @@
 import os
+import logging
 from elasticsearch import Elasticsearch, exceptions
 
-# Configure logging for debugging
+logger = logging.getLogger(__name__)
 
 def get_mlt_recommendations(post_id, num_results=10):
     """
@@ -14,25 +15,27 @@ def get_mlt_recommendations(post_id, num_results=10):
     Returns:
         list: A list of recommended post_ids.
     """
-    print(f"Entering get_mlt_recommendations for post_id: {post_id}, num_results: {num_results}")
+    logger.info(f"Entering get_mlt_recommendations for post_id: {post_id}, num_results: {num_results}")
     try:
         es_host = os.getenv('ES_HOST')
         es_port = os.getenv('ES_PORT')
 
-        print(f"Environment variables - ES_HOST: {es_host}, ES_PORT: {es_port}")
+        logger.debug(f"Environment variables - ES_HOST: {es_host}, ES_PORT: {es_port}")
 
         # Connect to Elasticsearch using environment variables
-        # Note: Fingerprint is only relevant for HTTPS connections.
-        # Ensure ES_FINGERPRINT is set in your .env file.
-        es = Elasticsearch(f"http://{es_host}:{es_port}")
+        # Prioritize HTTPS with fingerprint if available, otherwise fall back to HTTP
+        es_client_params = {
+            'host': es_host,
+            'port': int(es_port),
+            'scheme': 'http' # Default to http
+        }
+
+        es = Elasticsearch([es_client_params])
         
-        # es = Elasticsearch(f"http://{es_username}:{es_password}@{es_host}:{es_port}")
-        print(F"Elasticsearch client url constructed.: http://{es_host}:{es_port}")
-        print("Elasticsearch client initialized.")
-        # if not es.ping():
-        #     print("ERROR: Could not connect to Elasticsearch! Please check ES_HOST and ES_PORT.")
-        #     return []
-        print("Successfully connected to Elasticsearch.")
+        if not es.ping():
+            logger.error("ERROR: Could not connect to Elasticsearch! Please check ES_HOST, ES_PORT, scheme, and credentials.")
+            return []
+        logger.info("Successfully connected to Elasticsearch.")
 
         # Define the More Like This query
         mlt_query = {
@@ -52,23 +55,21 @@ def get_mlt_recommendations(post_id, num_results=10):
             },
             "size": num_results
         }
-        print(f"MLT query constructed: {mlt_query}")
+        logger.debug(f"MLT query constructed: {mlt_query}")
 
         # Execute the search query
         response = es.search(index="post_com_idx", body=mlt_query)
-        print(f"Elasticsearch response received: {response}")
+        logger.debug(f"Elasticsearch response received: {response}")
 
         # Extract the recommended post_ids from the response
         recommended_post_ids = [hit['_id'] for hit in response['hits']['hits']]
-        print(f"Recommended post IDs: {recommended_post_ids}")
+        logger.info(f"Recommended post IDs: {recommended_post_ids}")
 
-        return recommended_post_ids
+        return response.body
 
     except exceptions.ConnectionError as ce:
-        # Handle connection errors to Elasticsearch
-        print(f"Connection Error: Could not connect to Elasticsearch. Details: {ce}")
+        logger.error(f"Connection Error: Could not connect to Elasticsearch. Details: {ce}", exc_info=True)
         return []
     except Exception as e:
-        # Handle other exceptions
-        print(f"An unexpected error occurred: {e}")
+        logger.error(f"An unexpected error occurred: {e}", exc_info=True)
         return []

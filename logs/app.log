@@ -1,0 +1,110 @@
+2025-08-27 17:45:01,421 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:45:01,441 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:45:06,555 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:45:06,575 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:45:10,607 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:45:10,609 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:45:10,630 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:45:25,403 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:45:25,405 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:45:25,425 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:45:35,788 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:45:35,790 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:45:35,810 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:46:34,880 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:46:34,883 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:46:35,530 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:46:35,532 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:46:35,552 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:46:39,789 - __main__ - INFO - Received request for post_id: 68aec1f116c352ce9f59139a
+2025-08-27 17:46:39,792 - __main__ - INFO - No cache found for post_id: 68aec1f116c352ce9f59139a. Fetching from Elasticsearch.
+2025-08-27 17:46:39,792 - recommender.content_based - INFO - Entering get_mlt_recommendations for post_id: 68aec1f116c352ce9f59139a, num_results: 10
+2025-08-27 17:46:39,793 - recommender.content_based - INFO - Attempting HTTP connection (no fingerprint provided).
+2025-08-27 17:46:39,794 - recommender.content_based - ERROR - An unexpected error occurred: Can't specify the options 'basic_auth' via a dictionary in 'hosts', only 'host', 'path_prefix', 'port', 'scheme', 'url_prefix', 'use_ssl' options are allowed
+Traceback (most recent call last):
+  File "D:\Workspace\recommendation-2m\recommender\content_based.py", line 46, in get_mlt_recommendations
+    es = Elasticsearch([es_client_params])
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\elasticsearch\_sync\client\__init__.py", line 339, in __init__
+    node_configs = client_node_configs(
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\elasticsearch\_sync\client\utils.py", line 119, in client_node_configs
+    node_configs = hosts_to_node_configs(hosts)
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\elasticsearch\_sync\client\utils.py", line 167, in hosts_to_node_configs
+    node_configs.append(host_mapping_to_node_config(host))
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\elasticsearch\_sync\client\utils.py", line 191, in host_mapping_to_node_config
+    raise ValueError(
+ValueError: Can't specify the options 'basic_auth' via a dictionary in 'hosts', only 'host', 'path_prefix', 'port', 'scheme', 'url_prefix', 'use_ssl' options are allowed
+2025-08-27 17:47:14,871 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:47:14,873 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:47:14,895 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:47:24,279 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:47:24,281 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:47:24,299 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:47:35,789 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:47:35,791 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:47:36,505 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:47:36,506 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:47:36,525 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:47:39,008 - __main__ - INFO - Received request for post_id: 68aec1f116c352ce9f59139a
+2025-08-27 17:47:39,012 - __main__ - INFO - No cache found for post_id: 68aec1f116c352ce9f59139a. Fetching from Elasticsearch.
+2025-08-27 17:47:39,013 - recommender.content_based - INFO - Entering get_mlt_recommendations for post_id: 68aec1f116c352ce9f59139a, num_results: 10
+2025-08-27 17:47:39,026 - elastic_transport.transport - INFO - HEAD http://192.168.0.107:9200/ [status:200 duration:0.011s]
+2025-08-27 17:47:39,027 - recommender.content_based - INFO - Successfully connected to Elasticsearch.
+2025-08-27 17:47:39,031 - elastic_transport.transport - INFO - POST http://192.168.0.107:9200/post_com_idx/_search [status:200 duration:0.004s]
+2025-08-27 17:47:39,033 - recommender.content_based - INFO - Recommended post IDs: ['68aeca8716c352ce9f59139c', '68aecb7516c352ce9f5913a6']
+2025-08-27 17:47:44,871 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:47:44,873 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:47:44,895 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:49:08,013 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:49:08,017 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:49:08,042 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:49:12,193 - __main__ - INFO - Received request for post_id: 68aec1f116c352ce9f59139a
+2025-08-27 17:49:12,197 - __main__ - INFO - No cache found for post_id: 68aec1f116c352ce9f59139a. Fetching from Elasticsearch.
+2025-08-27 17:49:12,197 - recommender.content_based - INFO - Entering get_mlt_recommendations for post_id: 68aec1f116c352ce9f59139a, num_results: 10
+2025-08-27 17:49:12,201 - elastic_transport.transport - INFO - HEAD http://192.168.0.107:9200/ [status:200 duration:0.002s]
+2025-08-27 17:49:12,202 - recommender.content_based - INFO - Successfully connected to Elasticsearch.
+2025-08-27 17:49:12,207 - elastic_transport.transport - INFO - POST http://192.168.0.107:9200/post_com_idx/_search [status:200 duration:0.004s]
+2025-08-27 17:49:12,207 - recommender.content_based - INFO - Recommended post IDs: ['68aeca8716c352ce9f59139c', '68aecb7516c352ce9f5913a6']
+2025-08-27 17:49:12,208 - __main__ - ERROR - An error occurred during recommendation process: Object of type ObjectApiResponse is not JSON serializable
+Traceback (most recent call last):
+  File "D:\Workspace\recommendation-2m\app.py", line 57, in recommend
+    return jsonify(recommendations), 200
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "D:\Workspace\recommendation-2m\venv\lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type ObjectApiResponse is not JSON serializable
+2025-08-27 17:49:38,864 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:49:38,866 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:49:38,887 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:49:56,051 - __main__ - INFO - Received request for post_id: 68aec1f116c352ce9f59139a
+2025-08-27 17:49:56,054 - __main__ - INFO - No cache found for post_id: 68aec1f116c352ce9f59139a. Fetching from Elasticsearch.
+2025-08-27 17:49:56,055 - recommender.content_based - INFO - Entering get_mlt_recommendations for post_id: 68aec1f116c352ce9f59139a, num_results: 10
+2025-08-27 17:49:56,059 - elastic_transport.transport - INFO - HEAD http://192.168.0.107:9200/ [status:200 duration:0.002s]
+2025-08-27 17:49:56,060 - recommender.content_based - INFO - Successfully connected to Elasticsearch.
+2025-08-27 17:49:56,064 - elastic_transport.transport - INFO - POST http://192.168.0.107:9200/post_com_idx/_search [status:200 duration:0.003s]
+2025-08-27 17:49:56,065 - recommender.content_based - INFO - Recommended post IDs: ['68aeca8716c352ce9f59139c', '68aecb7516c352ce9f5913a6']
+2025-08-27 17:49:56,066 - recommender.content_based - ERROR - An unexpected error occurred: name 'body' is not defined
+Traceback (most recent call last):
+  File "D:\Workspace\recommendation-2m\recommender\content_based.py", line 68, in get_mlt_recommendations
+    return response,body
+NameError: name 'body' is not defined
+2025-08-27 17:51:09,274 - root - INFO - Logging configured with level: INFO
+2025-08-27 17:51:09,276 - __main__ - INFO - Starting Flask app in debug mode on port 5000
+2025-08-27 17:51:09,293 - werkzeug - WARNING -  * Debugger is active!
+2025-08-27 17:51:37,800 - __main__ - INFO - Received request for post_id: 68aec1f116c352ce9f59139a
+2025-08-27 17:51:37,813 - __main__ - INFO - No cache found for post_id: 68aec1f116c352ce9f59139a. Fetching from Elasticsearch.
+2025-08-27 17:51:37,813 - recommender.content_based - INFO - Entering get_mlt_recommendations for post_id: 68aec1f116c352ce9f59139a, num_results: 10
+2025-08-27 17:51:37,837 - elastic_transport.transport - INFO - HEAD http://192.168.0.107:9200/ [status:200 duration:0.021s]
+2025-08-27 17:51:37,837 - recommender.content_based - INFO - Successfully connected to Elasticsearch.
+2025-08-27 17:51:37,842 - elastic_transport.transport - INFO - POST http://192.168.0.107:9200/post_com_idx/_search [status:200 duration:0.004s]
+2025-08-27 17:51:37,843 - recommender.content_based - INFO - Recommended post IDs: ['68aeca8716c352ce9f59139c', '68aecb7516c352ce9f5913a6']
