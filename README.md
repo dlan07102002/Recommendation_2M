@@ -94,16 +94,16 @@ Các lĩnh vực cần cải thiện/cân nhắc:
     cho việc giám sát và gỡ lỗi.
 -   Kiểm thử: Không có tệp kiểm thử nào được cung cấp. Việc thêm các kiểm thử đơn vị
     và tích hợp sẽ cải thiện đáng kể chất lượng mã và đảm bảo tính đúng đắn.
--   `utils/db_helpers.py`: Tệp này hiện là một tệp giữ chỗ. Việc triển khai nó sẽ rất  
-    quan trọng đối với bất kỳ tương tác cơ sở dữ liệu nào trong tương lai (ví dụ: tìm  
+-   `utils/db_helpers.py`: Tệp này hiện là một tệp giữ chỗ. Việc triển khai nó sẽ rất
+    quan trọng đối với bất kỳ tương tác cơ sở dữ liệu nào trong tương lai (ví dụ: tìm
     nạp thông tin chi tiết bài đăng không có sẵn trong Elasticsearch).
 -   Bảo mật: Đối với một hệ thống sản xuất, hãy cân nhắc thêm xác thực và ủy quyền
     vào điểm cuối API.
 
 Kết luận:
 
-Dự án này cung cấp một nền tảng vững chắc cho một hệ thống đề xuất dựa trên nội dung.  
- Nó được tổ chức tốt và sử dụng các công nghệ phù hợp. Việc giải quyết các lĩnh vực
+Dự án này cung cấp một nền tảng vững chắc cho một hệ thống đề xuất dựa trên nội dung.
+Nó được tổ chức tốt và sử dụng các công nghệ phù hợp. Việc giải quyết các lĩnh vực
 cần cải thiện đã xác định, đặc biệt là liên quan đến lập chỉ mục Elasticsearch, quản
 lý máy khách và kiểm thử, sẽ nâng cao đáng kể tính mạnh mẽ và khả năng sẵn sàng sản
 xuất của nó.

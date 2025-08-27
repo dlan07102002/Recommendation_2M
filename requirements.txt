@@ -1,4 +1,4 @@
 Flask
-elasticsearch
+elasticsearch==8.18.0
 redis
 python-dotenv
